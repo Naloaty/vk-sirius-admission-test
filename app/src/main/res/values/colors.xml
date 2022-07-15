@@ -7,4 +7,17 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="pale_white">#47FFFFFF</color>>
+    <color name="dark_blue">#050B18</color>
+    <color name="gold_star">#F4D144</color>
+    <color name="gray_star">#D7D7D7</color>
+    <color name="downloads">#45454D</color>
+    <color name="review_date">#66FFFFFF</color>>
+    <color name="review_text">#A8ADB7</color>\
+    <color name="btn_install_app">#F4D144</color>
+    <color name="category_chip_background">#3D44A9F4</color>
+    <color name="category_chip_text">#44A9F4</color>
+    <color name="app_description_text">#B3EEF2FB</color>
+    <color name="section_delimiter">#1A1F29</color>
 </resources>

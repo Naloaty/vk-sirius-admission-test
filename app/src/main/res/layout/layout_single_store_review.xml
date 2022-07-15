@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="6dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_profilePicture"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="7dp"
+        android:fontFamily="@font/sk_modernist"
+        android:textColor="@color/white"
+        android:textFontWeight="400"
+        android:textSize="16sp"
+        android:letterSpacing="0.031"
+        app:layout_constraintBottom_toTopOf="@+id/tv_date"
+        app:layout_constraintStart_toStartOf="@+id/tv_date"
+        tools:text="Auguste Conte" />
+
+    <TextView
+        android:id="@+id/tv_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="@font/sk_modernist"
+        android:textColor="@color/review_date"
+        android:textFontWeight="400"
+        android:textSize="12sp"
+        android:letterSpacing="0.042"
+        app:layout_constraintBaseline_toBottomOf="@+id/iv_profilePicture"
+        app:layout_constraintStart_toEndOf="@+id/iv_profilePicture"
+        tools:layout_editor_absoluteY="66dp"
+        tools:text="February 14, 2019" />
+
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="@font/sk_modernist"
+        android:letterSpacing="0.025"
+        android:lineHeight="20sp"
+        android:textColor="@color/review_text"
+        android:textFontWeight="400"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_profilePicture"
+        tools:text="“Once you start to learn its secrets, there’s a wild and exciting variety of play here that’s unmatched, even by its peers.”" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

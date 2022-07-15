@@ -11,6 +11,23 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:windowTranslucentStatus">true</item>
         <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Sirius.Translucent" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
+    <style name="Theme.Sirius.CategoryChip" parent="Widget.MaterialComponents.Chip.Action">
+        <item name="chipBackgroundColor">@color/category_chip_background</item>
+        <item name="chipSurfaceColor">@color/category_chip_background</item>
+        <item name="chipStrokeWidth">0dp</item>
+        <item name="android:textSize">10sp</item>
+        <item name="android:textColor">@color/category_chip_text</item>
+        <item name="fontFamily">@font/montserrat_medium</item>
+        <item name="chipMinHeight">22dp</item>
     </style>
 </resources>

@@ -1,11 +1,303 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/dark_blue">
 
-    <!-- Место для верстки -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <!-- Место для верстки -->
+
+        <ImageView
+            android:id="@+id/iv_header_bg_img"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/dota2_poster"
+            app:layout_constraintBottom_toTopOf="@+id/guide_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:outlineProvider="none"
+            android:scaleType="center"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            app:backgroundTint="@color/pale_white"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/guide_header_btn"
+            app:layout_constraintStart_toStartOf="parent"
+            app:tint="@color/white" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/btn_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="14dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:outlineProvider="none"
+            android:scaleType="center"
+            android:src="@drawable/ic_baseline_more_horiz_24"
+            app:backgroundTint="@color/pale_white"
+            app:borderWidth="0dp"
+            app:fabSize="normal"
+            app:layout_constraintBottom_toTopOf="@+id/guide_header_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:tint="@color/white" />
+
+        <View
+            android:id="@+id/header_btn_shading"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/linear_gradient_store_header"
+            app:layout_constraintBottom_toTopOf="@+id/guide_header_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="327dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_header_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="126dp" />
+
+        <View
+            android:id="@+id/bottom_sheet_top"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:background="@drawable/rounded_sheet"
+            app:layout_constraintBottom_toTopOf="@+id/guide_header"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <View
+            android:id="@+id/app_icon_frame"
+            android:layout_width="88dp"
+            android:layout_height="88dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/app_icon_frame"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/bottom_sheet_top" />
+
+        <ImageView
+            android:id="@+id/iv_appLogo"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            app:layout_constraintBottom_toBottomOf="@+id/app_icon_frame"
+            app:layout_constraintEnd_toEndOf="@+id/app_icon_frame"
+            app:layout_constraintStart_toStartOf="@+id/app_icon_frame"
+            app:layout_constraintTop_toTopOf="@+id/app_icon_frame"
+            tools:src="@drawable/dota2_logo" />
+
+        <TextView
+            android:id="@+id/tv_appName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/sk_modernist"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="20sp"
+            android:letterSpacing="0.019"
+            app:layout_constraintStart_toEndOf="@+id/app_icon_frame"
+            app:layout_constraintTop_toTopOf="@+id/bottom_sheet_top"
+            tools:text="DoTA 2" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/rb_appRatingBar1"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
+            android:layout_width="76dp"
+            android:layout_height="14dp"
+            android:layout_marginTop="7dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/gold_star"
+            android:rating="4.9"
+            app:layout_constraintStart_toStartOf="@+id/tv_appName"
+            app:layout_constraintTop_toBottomOf="@+id/tv_appName"
+            app:mrb_progressBackgroundTint="@color/gray_star" />
+
+        <me.zhanghai.android.materialratingbar.MaterialRatingBar
+            android:id="@+id/rb_appRatingBar2"
+            style="@style/Widget.MaterialRatingBar.RatingBar"
+            android:layout_width="76dp"
+            android:layout_height="14dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginBottom="8dp"
+            android:isIndicator="true"
+            android:numStars="5"
+            android:progressTint="@color/gold_star"
+            android:rating="4.9"
+            app:layout_constraintBottom_toTopOf="@+id/tv_reviewsNumExtended"
+            app:layout_constraintStart_toEndOf="@+id/tv_ratingNum"
+            app:mrb_progressBackgroundTint="@color/gray_star" />
+
+        <TextView
+            android:id="@+id/tv_reviewsNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:textColor="@color/downloads"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:letterSpacing="0.036"
+            app:layout_constraintBottom_toBottomOf="@+id/rb_appRatingBar1"
+            app:layout_constraintStart_toEndOf="@+id/rb_appRatingBar1"
+            app:layout_constraintTop_toTopOf="@+id/rb_appRatingBar1"
+            tools:text="70M" />
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cg_categories"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/app_icon_frame"
+            app:singleLine="true">
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <TextView
+            android:id="@+id/tv_appDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:fontFamily="@font/sk_modernist"
+            android:lineHeight="19sp"
+            android:textColor="@color/app_description_text"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cg_categories"
+            tools:text="Dota 2 is a multiplayer online battle arena (MOBA) game which has two teams of five players compete to collectively destroy a large structure defended by the opposing team known as the &quot;Ancient&quot;, whilst defending their own." />
+
+        <TextView
+            android:id="@+id/tv_reviewAndRatings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sk_modernist"
+            android:text="@string/title_reviewAndRatings"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="16sp"
+            android:letterSpacing="0.032"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_appDescription" />
+
+        <TextView
+            android:id="@+id/tv_ratingNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/sk_modernist"
+            android:textColor="@color/white"
+            android:textFontWeight="700"
+            android:textSize="48sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_reviewAndRatings"
+            tools:text="4.9" />
+
+        <TextView
+            android:id="@+id/tv_reviewsNumExtended"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:fontFamily="@font/sk_modernist"
+            android:text="@string/text_reviewsNumExtended"
+            android:textColor="@color/white"
+            android:textFontWeight="400"
+            android:textSize="12sp"
+            android:letterSpacing="0.036"
+            app:layout_constraintBaseline_toBaselineOf="@+id/tv_ratingNum"
+            app:layout_constraintStart_toEndOf="@+id/tv_ratingNum" />
+
+        <View
+            android:id="@+id/section_delimiter"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="38dp"
+            android:background="@color/section_delimiter"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_ratingNum" />
+
+        <LinearLayout
+            android:id="@+id/reviews_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/section_delimiter">
+
+            <!--include layout="@layout/layout_single_store_review" /-->
+            <!--include layout="@layout/layout_single_store_review" /-->
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_action"
+            android:layout_width="0dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="18dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="34dp"
+            android:background="@drawable/install_app_button_bg"
+            android:fontFamily="@font/sk_modernist"
+            android:textAllCaps="false"
+            android:textColor="@color/dark_blue"
+            android:textFontWeight="700"
+            android:textSize="20sp"
+            android:letterSpacing="0.03"
+            tools:text="Install"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviews_container" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
